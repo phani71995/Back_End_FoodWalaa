@@ -1,0 +1,14 @@
+const firmController = require("../controller/firmController.js");
+const express = require('express');
+const verifytoken = require("../middleware/verifytoken.js");
+
+const router = express.Router();
+router.post("/addfirm", verifytoken, firmController.addFirm);
+router.post("/deletedfirm/:firmId", firmController.firmDeletedById);
+router.get("/uploads/:imageName", (req, res) => {
+    const imageName = req.params.imageName;
+    res.headersSent('content-type', "image/jpeg");
+    res.sendFile(path.join(__dirname, "..", "uploads", imageName))
+})
+
+module.exports = router;

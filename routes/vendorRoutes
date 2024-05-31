@@ -1,0 +1,10 @@
+const vendorController = require("../controller/vendorController.js");
+const express = require('express');
+
+const router = express.Router();
+router.post("/register", vendorController.vendorRegister);
+router.post("/login", vendorController.vendorsLogin);
+router.get("/getallvendors", vendorController.getAllvendor);
+router.get("/getvendorbyid/:id", vendorController.getVendorById);
+
+module.exports = router;
