@@ -16,8 +16,8 @@ mongoose.connect(process.env.Mongo_uri).then(() => {
 
 app.listen(3600)
 app.use(express.json());
-app.get('/home', function (req, res) {
-    res.send('welcome mango  ');
+app.get('/', function (req, res) {
+    res.send('welcome Foodwalaa app DataBase');
 
 })
 app.use("/vendor", vendorrouter);
